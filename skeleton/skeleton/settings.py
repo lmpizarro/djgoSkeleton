@@ -109,12 +109,17 @@ WSGI_APPLICATION = 'skeleton.wsgi.application'
 
 import os
 
-TEMPLATE_DIRS = (
+#TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    'os.path.join(BASE_DIR, "./templates")',
-)
+#    'os.path.join(BASE_DIR, "templates")',
+#)
+
+#Base Directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR,'..', 'templates')]
 
 INSTALLED_APPS = (
     'django.contrib.auth',
