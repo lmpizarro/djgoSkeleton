@@ -13,4 +13,5 @@ urlpatterns = patterns('',
     url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
     #url(r'^login/$', views.login_user, name='login_user'),
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'polls/login.html'}),
+    url(r'^logout/$', views.logout_view, name='logout_view'),
 )

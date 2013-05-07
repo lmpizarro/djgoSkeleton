@@ -6,7 +6,7 @@ from django.http import Http404
 
 # auth/views.py
 from django.shortcuts import render_to_response
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 
@@ -17,6 +17,8 @@ from skeleton.apps.polls.models import Poll, Choice
 from django.core.urlresolvers import reverse
 
 from django.contrib.auth.decorators import login_required
+
+from django.http import HttpResponseRedirect
 
 
 @login_required(login_url='/polls/login')
@@ -85,3 +87,7 @@ def login_user(request):
 
     #return render_to_response('polls/auth.html',{'state':state, 'username': username})
     return render(request, 'polls/auth.html', {'state':state, 'username': username})
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect("/polls")
