@@ -1,5 +1,10 @@
 # Django settings for skeleton project.
 
+import os
+#Base Directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -67,12 +72,15 @@ STATIC_ROOT = ''
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
+STATIC_DIRS = [os.path.join(BASE_DIR,'..', 'static')]
+
+
 # Additional locations of static files
-STATICFILES_DIRS = (
+#STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-)
+#)
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -107,19 +115,14 @@ ROOT_URLCONF = 'skeleton.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'skeleton.wsgi.application'
 
-import os
 
+TEMPLATE_DIRS = [os.path.join(BASE_DIR,'..', 'templates')]
 #TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 #    'os.path.join(BASE_DIR, "templates")',
 #)
-
-#Base Directory
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-TEMPLATE_DIRS = [os.path.join(BASE_DIR,'..', 'templates')]
 
 INSTALLED_APPS = (
     'django.contrib.auth',

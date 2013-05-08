@@ -80,13 +80,14 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 state = "You're successfully logged in!"
+                next = "/polls/"
+                return HttpResponseRedirect(next)
             else:
                 state = "Your account is not active, please contact the site admin."
         else:
             state = "Your username and/or password were incorrect."
-
-    #return render_to_response('polls/auth.html',{'state':state, 'username': username})
-    return render(request, 'polls/auth.html', {'state':state, 'username': username})
+    else:
+       return render(request, 'polls/signin.html', {'state':state, 'username': username})
 
 def logout_view(request):
     logout(request)
