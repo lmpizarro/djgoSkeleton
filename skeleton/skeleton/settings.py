@@ -125,6 +125,8 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR,'..', 'templates')]
 #)
 
 INSTALLED_APPS = (
+    'django_admin_bootstrapped.bootstrap3',
+    'django_admin_bootstrapped',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -136,7 +138,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'skeleton.apps.polls',
-    'south',
+    #'south',
 )
 
 # A sample logging configuration. The only tangible logging
