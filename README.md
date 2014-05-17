@@ -1,6 +1,7 @@
 A basic Django project with 
 
 Django==1.5.1
+
 django-admin-bootstrapped==1.6.4
 
 
