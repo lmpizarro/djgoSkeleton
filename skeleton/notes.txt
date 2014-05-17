@@ -1,0 +1,3 @@
+manage.py dumpdata testapp
+
+para ver el formato del fixture
