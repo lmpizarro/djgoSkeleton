@@ -1,3 +1,8 @@
+A basic Django project with 
+
+django-admin-bootstrapped==1.6.4
+
+
 Django Project Setup
 
 Your project and your reusable app
