@@ -16,5 +16,6 @@ class PollAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['question']
     date_hierarchy = 'pub_date'
+    readonly_fields = ("pub_date",) # http://stackoverflow.com/questions/3516799/django-modeladmin-fieldsets-field-date-missing-from-the-form
 
 admin.site.register(Poll, PollAdmin)
