@@ -24,11 +24,11 @@ class Poll(models.Model):
     # http://stackoverflow.com/questions/1737017/django-auto-now-and-auto-now-add
 
     def save(self, *args, **kwargs):
-    ''' On save, update timestamps '''
-    if not self.id:
-       self.pub_date = datetime.datetime.today()
-    self.modified_date = datetime.datetime.today()
-    return super(User, self).save(*args, **kwargs)
+    # On save, update timestamps '''
+      if not self.id:
+        self.pub_date = datetime.datetime.today()
+      self.modified_date = datetime.datetime.today()
+      return super(User, self).save(*args, **kwargs)
     
 
 class Choice(models.Model):
