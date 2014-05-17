@@ -6,7 +6,8 @@ from django.db import models
 
 class Poll(models.Model):
     question = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published', editable=False)
+    modified_date    = models.DateTimeField()
 
     def __unicode__(self):
         return self.question
@@ -20,6 +21,15 @@ class Poll(models.Model):
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'
 
+    # http://stackoverflow.com/questions/1737017/django-auto-now-and-auto-now-add
+
+    def save(self, *args, **kwargs):
+    ''' On save, update timestamps '''
+    if not self.id:
+       self.pub_date = datetime.datetime.today()
+    self.modified_date = datetime.datetime.today()
+    return super(User, self).save(*args, **kwargs)
+    
 
 class Choice(models.Model):
     poll = models.ForeignKey(Poll)

@@ -1,0 +1,66 @@
+[
+  {
+    "model": "skeleton.apps.poll",
+    "pk": 1,
+    "fields": {
+      "question": "Como esta el dia?",
+    }
+  },
+  {
+    "model": "skeleton.apps.poll",
+    "pk": 2,
+    "fields": {
+      "question": "Cual Beattle es mejor",
+    }
+  }
+  {
+    "model": "skeleton.apps.choice",
+    "pk": 1,
+    "fields": {
+      "poll": "1",
+      "choice_text": "bueno",
+    }
+  }
+  {
+    "model": "skeleton.apps.choice",
+    "pk": 2,
+    "fields": {
+      "poll": "1",
+      "choice_text": "feo",
+    }
+  }
+  {
+    "model": "skeleton.apps.choice",
+    "pk": 3,
+    "fields": {
+      "poll": "1",
+      "choice_text": "malo",
+    }
+  }
+  {
+    "model": "skeleton.apps.choice",
+    "pk": 4,
+    "fields": {
+      "poll": "2",
+      "choice_text": "Ringo",
+    }
+  }
+  {
+    "model": "skeleton.apps.choice",
+    "pk": 5,
+    "fields": {
+      "poll": "2",
+      "choice_text": "John",
+    }
+  }
+  {
+    "model": "skeleton.apps.choice",
+    "pk": 6,
+    "fields": {
+      "poll": "2",
+      "choice_text": "Paul",
+    }
+  }
+
+
+]
