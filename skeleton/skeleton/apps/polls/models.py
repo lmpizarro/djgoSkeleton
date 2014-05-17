@@ -1,13 +1,15 @@
 import datetime
 from django.utils import timezone
 from django.db import models
+import datetime
+
 
 # Create your models here.
 
 class Poll(models.Model):
     question = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published', editable=False)
-    modified_date    = models.DateTimeField()
+    pub_date = models.DateTimeField('date published', auto_now_add=True, default=datetime.datetime.now) 
+    modified_date    = models.DateTimeField(default=datetime.datetime.now)
 
     def __unicode__(self):
         return self.question
@@ -28,7 +30,7 @@ class Poll(models.Model):
       if not self.id:
         self.pub_date = datetime.datetime.today()
       self.modified_date = datetime.datetime.today()
-      return super(User, self).save(*args, **kwargs)
+      return super(Poll, self).save(*args, **kwargs)
     
 
 class Choice(models.Model):
