@@ -1,12 +1,14 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import json
 
-'''
-# -*- coding: utf-8 -*-
+
+
 import sys
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
-'''
 
 
 fixture=[]
@@ -16,24 +18,38 @@ def dataToJson (app, model, fixture, data, pk):
 		fixture.append ( {'pk': pk, 'model': app + "." + model, 'fields': x})
 		pk +=1
 polls = [
- 	{'question': 'Como esta el dia?'},
- 	{'question': 'Cual es el mejor beatle?'}
+ 	{'question': u'Cómo esta el día?'},
+ 	{'question': u'Cuál es el mejor beatle?'},
+ 	{'question': u'Qué pasa?'}
 ]
 
 choices = [
-      {'poll':'2', 'choice_text': 'bueno'},
-      {'poll':'2', 'choice_text': 'feo'},
-      {'poll':'2', 'choice_text': 'malo'},
-      {'poll':'3', 'choice_text': 'ringo'},
-      {'poll':'3', 'choice_text': 'john'},
-      {'poll':'3', 'choice_text': 'paul'}
+      {'poll':'1', 'choice_text': 'bueno'},
+      {'poll':'1', 'choice_text': 'feo'},
+      {'poll':'1', 'choice_text': 'malo'},
+      {'poll':'2', 'choice_text': 'ringo'},
+      {'poll':'2', 'choice_text': 'john'},
+      {'poll':'2', 'choice_text': 'paul'},
+      {'poll':'3', 'choice_text': 'nada'},
+      {'poll':'3', 'choice_text': 'algo'},
+      {'poll':'3', 'choice_text': 'de todo'},
 ]
 
 
 def main():
   app='polls'
+
+  data = polls
+  model='poll'
+  dataToJson(app, model, fixture, data, 4)
+
+  data = choices
   model='choice'
-  dataToJson(app, model, fixture, choices, 4)
+  dataToJson(app, model, fixture, data, 4)
+
+
+  #print (fixture)
+  #print json.dumps(fixture, ensure_ascii=False)
   print json.dumps(fixture)
 
 
