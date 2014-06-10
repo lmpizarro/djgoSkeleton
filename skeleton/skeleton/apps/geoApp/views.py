@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
 from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 
 
 # Create your views here.

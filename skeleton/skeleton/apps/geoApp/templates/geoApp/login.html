@@ -24,7 +24,7 @@
   {% endblock %}
 {% block content %}
 
-        <form class="form-signin" role="form"  id="login_form" method="post" action="/geoapp/login/">
+        <form class="form-signin" role="form"  id="login_form" method="post" action="{% url 'geoApp:login' %}">
             <h2 class="form-signin-heading">Please sign in</h2>
             {% csrf_token %}
             <input placeholder="Username" class="form-control"  type="text" name="username" value="" size="50" />
