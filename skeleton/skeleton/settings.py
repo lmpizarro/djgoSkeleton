@@ -76,11 +76,12 @@ STATIC_DIRS = [os.path.join(BASE_DIR,'..', 'static')]
 
 
 # Additional locations of static files
-#STATICFILES_DIRS = (
+STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-#)
+    "/home/lmpizarro/python/vEnv/skeleton/skeleton/apps/geoApp/static/geoApp/", 
+)
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -138,6 +139,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'skeleton.apps.polls',
+    'skeleton.apps.geoApp',
     #'south',
 )
 
