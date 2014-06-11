@@ -3,22 +3,22 @@ from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
 
 
 # Create your views here.
 
+
+p =  {"app": "geoApp"}
+
 @login_required(login_url='/geoapp/login')
 def index(request):
-    return render (request, 'geoApp/index.html')
+    return render (request, 'geoApp/index.html', p)
 
 
 
 def user_login(request):
     # Like before, obtain the context for the user's request.
-    context = RequestContext(request)
-
+    #context = RequestContext(request)
     # If the request is a HTTP POST, try to pull out the relevant information.
     if request.method == 'POST':
         # Gather the username and password provided by the user.
@@ -40,21 +40,22 @@ def user_login(request):
                 # We'll send the user back to the homepage.
                 login(request, user)
                 #return HttpResponseRedirect('/')
-                return render(request,'geoApp/index.html')
+                p['user'] = username
+                return render(request,'geoApp/index.html', p )
             else:
                 # An inactive account was used - no logging in!
-                return render(request, 'geoApp/login.html/')
+                return render(request, 'geoApp/login.html/',p)
         else:
             # Bad login details were provided. So we can't log the user in.
             print "Invalid login details: {0}, {1}".format(username, password)
-            return render(request, 'geoApp/login.html/')
+            return render(request, 'geoApp/login.html/',p)
 
     # The request is not a HTTP POST, so display the login form.
     # This scenario would most likely be a HTTP GET.
     else:
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
-        return render(request, 'geoApp/login.html')
+        return render(request, 'geoApp/login.html',p)
 
 
 
@@ -67,5 +68,5 @@ def user_logout(request):
     logout(request)
 
     # Take the user back to the homepage.
-    return render(request, 'geoApp/login.html/')
+    return render(request, 'geoApp/login.html/',p)
 
