@@ -8,7 +8,7 @@ from django.contrib.auth import login
 # Create your views here.
 
 
-p =  {"app": "geoApp"}
+p =  {"app": "geoApp", "title": "geoApp"}
 
 @login_required(login_url='/geoapp/login')
 def index(request):
