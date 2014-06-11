@@ -18,8 +18,8 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"  rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/static/css/starter-template.css" rel="stylesheet">
-    <link href="/static/css/signin.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/starter-template.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -54,7 +54,8 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-{% endblock %}
+  {% endblock %}
+
     <div class="container">
 
       <div class="starter-template">

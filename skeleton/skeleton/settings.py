@@ -4,6 +4,7 @@ import os
 #Base Directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+APP_DIR = os.path.dirname( globals()['__file__'] )
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -80,7 +81,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/home/lmpizarro/python/vEnv/skeleton/skeleton/apps/geoApp/static/geoApp/", 
+    #"/home/lmpizarro/python/vEnv/skeleton/skeleton/apps/geoApp/static/geoApp/", 
 )
 
 # List of finder classes that know how to find static files in
@@ -171,3 +172,7 @@ LOGGING = {
         },
     }
 }
+
+
+print APP_DIR
+print BASE_DIR
