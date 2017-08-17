@@ -8,8 +8,10 @@ post = {"author": "lmpizarro",
         "tags": ["mongodb"],
         "date": datetime.datetime.utcnow()}
 
-
-
+'''
+    See:
+        https://www.freelancer.co.it/community/articles/crud-operations-in-mongodb-using-python
+'''
 class Post (object):
 
     def __init__(self, post_id=None, text=None, tags=None, author=None, \
@@ -59,17 +61,20 @@ class Post (object):
 
 class connMDB(object):
 
-    def __init__(self):
-        self.client = MongoClient()
-        self.db = self.client.test_database
-        self.posts = self.db.posts # a collection
+    def __init__(self, host=None, port=None, database=None):
+        if host == None and port == None and database == None: 
+            self.client = MongoClient(host="localhost", port=27017)
+            self.db = self.client.test_database
+            self.posts = self.db.posts # a collection
+        else:
+            raise Exception("Yet Not implemented!")
+
 
 class myApp01DB (object):
 
     def __init__(self):
 
         self.conn = connMDB()
-
 
 
     def insertOne (self, post):
@@ -81,6 +86,16 @@ class myApp01DB (object):
 
     def getAll(self):
         return self.conn.posts.find()
+
+    def getAuthor(self, author):
+        return self.conn.posts.find({"author": author})
+
+    '''
+        tag is a []
+    '''
+    def getTag(self, tag):
+        return self.conn.posts.find({"tags": tag})
+
 
 
 DbConn = myApp01DB()
@@ -115,7 +130,31 @@ def test_getAll():
 
         print q    
 
+def test_getAuthor():    
+    global DbConn
+    query_all = DbConn.getAuthor("lmpizarro")
+
+    tq= []
+    for q in query_all:
+        tq.append(q)
+
+        print q    
+
+
+def test_getTag():    
+    global DbConn
+    query_all = DbConn.getTag("test")
+
+    tq= []
+    for q in query_all:
+        tq.append(q)
+
+        print q    
+
+
+
 if __name__ == '__main__':
     #test_Post()
-    test_Post()
-    #test_getAll()
+    #test_Post()
+    #test_getAuthor()
+    test_getTag()
