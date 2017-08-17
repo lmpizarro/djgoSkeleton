@@ -2,6 +2,10 @@
 
 ## Integrating mongoDB, noSQL database, to django
 
+### Django
+
+[Getting started with Django](https://www.djangoproject.com/start/)
+
 [django-marcador Tutorial](http://django-marcador.keimlink.de/en/index.html)
 
 [Django Girls Tutorial](https://tutorial.djangogirls.org/en/)
