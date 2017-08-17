@@ -1,12 +1,13 @@
 {% extends 'myApp01/base.html' %}
 
 {% block content %}
-	hello {{  data.function }} {{  data.user }} 
-
+<div> 
+	<h3> Function: {{  data.function }} User: {{  data.user }} </h3>
+</div>
 
 	{% for d in data.query %}
 	 <div>
-		 <p> {{d.author}} </p>
+		 <p> Author: {{ d.author}} Text:  {{d.text}} </p>
  	</div>
  	{% endfor %}
 
