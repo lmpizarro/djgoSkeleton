@@ -1,4 +1,6 @@
-basic project file with mongodb database
+# basic project with mongodb database
+
+## Integrating mongoDB, noSQL database, to django
 
 [django-marcador Tutorial](http://django-marcador.keimlink.de/en/index.html)
 
