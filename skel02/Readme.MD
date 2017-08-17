@@ -9,6 +9,14 @@ basic project file with mongodb database
 
 [CRUD Operations in MongoDB Using Python](https://www.freelancer.co.it/community/articles/crud-operations-in-mongodb-using-python)
 
+### django mongodb
+
+[Django MongoDB Engine](https://django-mongodb-engine.readthedocs.io/en/latest/)
+
+[Using MongoDB as your primary Django database](https://staltz.com/djangoconfi-mongoengine/#/)
+
+[Using MongoDB with Django](https://www.ibm.com/developerworks/library/os-django-mongo/index.html)
+
 ### Django Rest
 
 [Crear un API REST con Django Rest Framework - Parte I](http://levipy.com/crear-api-rest-con-django-rest-framework/)
