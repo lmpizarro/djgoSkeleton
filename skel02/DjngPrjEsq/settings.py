@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     #'quickstart'
-    #'rest30lines',
+    'rest30lines',
     'catalog',
 ]
 

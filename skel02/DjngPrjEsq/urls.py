@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-#from rest30lines.views import FileViewSet
+from rest30lines.views import FileViewSet
 from django.conf.urls import include, url
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken.views import obtain_auth_token
@@ -23,17 +23,25 @@ from django.contrib import admin
 
 import catalog
 
+
+from rest_framework.routers import SimpleRouter
+
+#router30 = SimpleRouter()
+
+#router30.register(r'rest30lines', FileViewSet)
+
+
 router = DefaultRouter()
-#router.register(r'rest30lines', FileViewSet)
+router30 = DefaultRouter()
 router.register(r'user', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+router30.register(r'rest30lines', FileViewSet)
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url(r'^accounts/profile/', admin.site.urls),
     #url(r'', include('myApp01.urls')),
-    #url(r'^rest30lines/', include(router.urls)),
+    url(r'^rest30lines/', include(router30.urls)),
     url(r'^api-token-auth/', obtain_auth_token),
     url(r'^', include('catalog.urls')),
     #url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
