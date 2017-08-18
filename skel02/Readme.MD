@@ -33,4 +33,10 @@
 
 [Creating a production ready API with Python and Django Rest Framework - part 1](https://www.andreagrandi.it/2016/09/28/creating-production-ready-api-python-django-rest-framework-part-1/)
 
+[Creating a production ready API with Python and Django Rest Framework – part 2](https://www.andreagrandi.it/2016/10/01/creating-a-production-ready-api-with-python-and-django-rest-framework-part-2/)
+
+[Creating a production ready API with Python and Django Rest Framework – part 3](https://www.andreagrandi.it/2017/03/12/creating-a-production-ready-api-with-python-and-django-rest-framework-part-3/)
+
 [Quickstart](http://www.django-rest-framework.org/tutorial/quickstart/)
+
+
