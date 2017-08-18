@@ -13,10 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from rest30lines.views import FileViewSet
+from rest_framework.routers import DefaultRouter
+
+
 from django.conf.urls import include, url
 from django.contrib import admin
+
+
+router = DefaultRouter()
+router.register(r'rest30lines', FileViewSet)
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('myApp01.urls')),
+    url(r'^rest30lines/', include(router.urls)),
 ]
