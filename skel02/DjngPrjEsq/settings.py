@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #'quickstart'
     'rest30lines',
     'catalog',
+    'polls.apps.PollsConfig',
 ]
 
 '''

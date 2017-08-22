@@ -40,3 +40,8 @@
 [Quickstart](http://www.django-rest-framework.org/tutorial/quickstart/)
 
 
+### Teach programming
+
+[Best ways to teach a beginner to program?](https://stackoverflow.com/questions/3088/best-ways-to-teach-a-beginner-to-program)
+
+[A Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2008/)

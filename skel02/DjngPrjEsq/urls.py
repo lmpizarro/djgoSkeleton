@@ -45,4 +45,5 @@ urlpatterns = [
     url(r'^api-token-auth/', obtain_auth_token),
     url(r'^', include('catalog.urls')),
     #url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^polls/', include('polls.urls')),
 ]
